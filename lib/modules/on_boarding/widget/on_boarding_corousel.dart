@@ -97,7 +97,10 @@ class _CoroselState extends State<_Corosel> {
             return ShaderMask(
               shaderCallback: (bounds) {
                 return RadialGradient(
-                  colors: [Colors.black87.withOpacity(0.8), Colors.black54],
+                  colors: [
+                    Colors.black87.withOpacity(0.7),
+                    Colors.black54.withOpacity(0.4)
+                  ],
                   center: Alignment.topCenter,
                   radius: 3,
                   tileMode: TileMode.clamp,
