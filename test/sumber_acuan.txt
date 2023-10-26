@@ -1,1 +1,6 @@
 https://www.figma.com/file/mO8rPIp72greKRScesQWnc/Coffee-Shop-Mobile-App-UI-(Community)?type=design&node-id=10-3130&mode=design&t=oyG71qlq6JvKXEZi-0
+
+
+Fungsi dispose:
+metode buang yang digunakan untuk melepaskan memori yang dialokasikan ke variabel ketika objek status dihapus.
+Misalnya, jika Anda menggunakan aliran dalam aplikasi Anda, maka Anda harus melepaskan memori yang dialokasikan ke pengontrol aliran. Jika tidak, aplikasi Anda mungkin mendapat peringatan dari PlayStore dan AppStore tentang kebocoran memori.

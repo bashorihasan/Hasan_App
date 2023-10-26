@@ -21,7 +21,7 @@ class OnBoardingPage extends StatelessWidget {
                 const Text(
                   "Good coffee,",
                   style: TextStyle(
-                    color: CustomColor.white,
+                    color: CustomColor.grey,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
@@ -29,7 +29,7 @@ class OnBoardingPage extends StatelessWidget {
                 const Text(
                   "Good friends,",
                   style: TextStyle(
-                    color: CustomColor.white,
+                    color: CustomColor.grey,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
@@ -37,7 +37,7 @@ class OnBoardingPage extends StatelessWidget {
                 const Text(
                   "let it blends",
                   style: TextStyle(
-                    color: CustomColor.white,
+                    color: CustomColor.grey,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
@@ -72,7 +72,7 @@ class OnBoardingPage extends StatelessWidget {
                     child: const Text(
                       "Get Started",
                       style: TextStyle(
-                          color: CustomColor.white,
+                          color: CustomColor.lightGrey,
                           fontSize: 20,
                           fontWeight: FontWeight.bold),
                     ),
