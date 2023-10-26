@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hasan_app/config/colors.dart';
 
-class SpecialOffer extends StatelessWidget {
-  const SpecialOffer({
+class SpecialOfferWidget extends StatelessWidget {
+  const SpecialOfferWidget({
     super.key,
   });
 

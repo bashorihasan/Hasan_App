@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hasan_app/config/colors.dart';
 
-class HomeAppbar extends StatelessWidget {
-  const HomeAppbar({
+class HomeAppbarWidget extends StatelessWidget {
+  const HomeAppbarWidget({
     super.key,
   });
 
