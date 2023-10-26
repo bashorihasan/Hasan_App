@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hasan_app/modules/home/screen/home_page.dart';
 import 'package:hasan_app/modules/on_boarding/widget/on_boarding_corousel.dart';
 import 'package:hasan_app/config/colors.dart';
 
@@ -61,7 +62,14 @@ class OnBoardingPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 55),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomePage(),
+                      ),
+                    );
+                  },
                   child: Container(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 91, vertical: 19),
