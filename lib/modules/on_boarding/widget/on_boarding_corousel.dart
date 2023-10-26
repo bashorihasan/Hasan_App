@@ -9,10 +9,12 @@ class OnBoardingCorousel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final dummyBanner = List<CorouselItem>.generate(
-        3, (index) => CorouselItem(image: 'assets/images/onboarding.png'));
+    final listItem = List<CorouselItem>.generate(
+      3,
+      (index) => CorouselItem(image: 'assets/images/onboarding.png'),
+    );
     return _Corosel(
-      items: dummyBanner,
+      items: listItem,
     );
   }
 }
@@ -21,11 +23,11 @@ class _Corosel extends StatefulWidget {
   const _Corosel({
     Key? key,
     required this.items,
-  })  : itemLenght = items.length,
+  })  : itemLength = items.length,
         super(key: key);
 
   final List<CorouselItem> items;
-  final int itemLenght;
+  final int itemLength;
 
   @override
   State<_Corosel> createState() => _CoroselState();
@@ -35,11 +37,9 @@ class _CoroselState extends State<_Corosel> {
   Timer? timer;
   List<String> images = [];
   final PageController _controller = PageController(
-    // viewportFraction: 0.9,
     initialPage: 1,
   );
 
-  // int length = 300;
   int page = 1;
 
   @override
@@ -96,8 +96,8 @@ class _CoroselState extends State<_Corosel> {
           itemBuilder: (context, index) {
             return ShaderMask(
               shaderCallback: (bounds) {
-                return const RadialGradient(
-                  colors: [Colors.black54, Colors.black12],
+                return RadialGradient(
+                  colors: [Colors.black87.withOpacity(0.8), Colors.black54],
                   center: Alignment.topCenter,
                   radius: 3,
                   tileMode: TileMode.clamp,
@@ -154,7 +154,7 @@ class _Indicator extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4.0),
                   color: i == (index % long)
                       ? CustomColor.primary
-                      : CustomColor.white,
+                      : CustomColor.fadedGrey,
                 ),
                 duration: const Duration(milliseconds: 800),
               );
