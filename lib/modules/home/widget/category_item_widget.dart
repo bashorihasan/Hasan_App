@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:hasan_app/config/colors.dart';
-import 'package:hasan_app/modules/home/category.dart';
+import 'package:hasan_app/modules/home/category_model.dart';
 import 'package:hasan_app/modules/home/home_bloc.dart';
 
-class CategoryItem extends StatelessWidget {
-  const CategoryItem({
+class CategoryItemWidget extends StatelessWidget {
+  const CategoryItemWidget({
     Key? key,
     required this.bloc,
     required this.category,
   }) : super(key: key);
 
   final HomeBloc bloc;
-  final CoffeeCategory category;
+  final CoffeeCategoryModel category;
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<CoffeeCategory?>(
+    return StreamBuilder<CoffeeCategoryModel?>(
       stream: bloc.selectedCategory.stream,
       initialData: bloc.selectedCategory.value,
       builder: (context, snapshot) {

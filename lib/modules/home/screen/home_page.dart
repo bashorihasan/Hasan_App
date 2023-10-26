@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:hasan_app/config/colors.dart';
 import 'package:hasan_app/modules/home/home_bloc.dart';
-import 'package:hasan_app/modules/home/navigation_bar_item.dart';
-import 'package:hasan_app/modules/home/widget/categories.dart';
-import 'package:hasan_app/modules/home/widget/home_appbar.dart';
-import 'package:hasan_app/modules/home/widget/searchbar_delegate.dart';
-import 'package:hasan_app/modules/home/widget/special_offer.dart';
-import 'package:hasan_app/modules/home/widget/tab_item.dart';
+import 'package:hasan_app/modules/home/navigation_bar_model.dart';
+import 'package:hasan_app/modules/home/widget/category_widget.dart';
+import 'package:hasan_app/modules/home/widget/home_appbar_widget.dart';
+import 'package:hasan_app/modules/home/widget/searchbar_widget.dart';
+import 'package:hasan_app/modules/home/widget/special_offer_widget.dart';
+import 'package:hasan_app/modules/home/widget/tab_item_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage>
         backgroundColor: CustomColor.white,
         body: Column(
           children: [
-            const HomeAppbar(),
+            const HomeAppbarWidget(),
             Expanded(
               child: CustomScrollView(
                 scrollDirection: Axis.vertical,
@@ -48,14 +48,14 @@ class _HomePageState extends State<HomePage>
                 physics: const BouncingScrollPhysics(),
                 slivers: [
                   SliverPersistentHeader(
-                    delegate: SearchBarDelegate(),
+                    delegate: SearchBarWidget(),
                     floating: true,
                   ),
                   SliverList(
                     delegate: SliverChildListDelegate(
                       [
-                        Categories(bloc: bloc),
-                        const SpecialOffer(),
+                        CategoryWidget(bloc: bloc),
+                        const SpecialOfferWidget(),
                       ],
                     ),
                   )
@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage>
         bottomNavigationBar: Container(
           height: 89,
           color: CustomColor.lightGrey,
-          child: StreamBuilder<List<NavigationBarItem>>(
+          child: StreamBuilder<List<NavigationBarModel>>(
             stream: bloc.listNavbar.stream,
             initialData: bloc.listNavbar.value,
             builder: (context, snapNavBar) {
@@ -91,10 +91,10 @@ class _HomePageState extends State<HomePage>
                 onTap: (value) =>
                     bloc.selectedNavigation.add(navBarItem[value]),
                 tabs: [
-                  TabItem(bloc: bloc, navBarItem: navBarItem, index: 0),
-                  TabItem(bloc: bloc, navBarItem: navBarItem, index: 1),
-                  TabItem(bloc: bloc, navBarItem: navBarItem, index: 2),
-                  TabItem(bloc: bloc, navBarItem: navBarItem, index: 3),
+                  TabItemWidget(bloc: bloc, navBarItem: navBarItem, index: 0),
+                  TabItemWidget(bloc: bloc, navBarItem: navBarItem, index: 1),
+                  TabItemWidget(bloc: bloc, navBarItem: navBarItem, index: 2),
+                  TabItemWidget(bloc: bloc, navBarItem: navBarItem, index: 3),
                 ],
                 controller: _tabController,
               );

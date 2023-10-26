@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hasan_app/modules/home/screen/home_page.dart';
-import 'package:hasan_app/modules/on_boarding/widget/on_boarding_corousel.dart';
+import 'package:hasan_app/modules/on_boarding/widget/on_boarding_corousel_widget.dart';
 import 'package:hasan_app/config/colors.dart';
 
 class OnBoardingPage extends StatelessWidget {
@@ -13,7 +13,7 @@ class OnBoardingPage extends StatelessWidget {
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          const OnBoardingCorousel(),
+          const OnBoardingCorouselWidget(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 45, vertical: 70),
             child: Column(

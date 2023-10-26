@@ -1,8 +1,8 @@
-class CoffeeCategory {
+class CoffeeCategoryModel {
   final String icon;
   final String name;
 
-  CoffeeCategory({
+  CoffeeCategoryModel({
     required this.icon,
     required this.name,
   });

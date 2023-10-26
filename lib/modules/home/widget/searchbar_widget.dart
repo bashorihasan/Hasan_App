@@ -2,7 +2,7 @@ import 'package:akar_icons_flutter/akar_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:hasan_app/config/colors.dart';
 
-class SearchBarDelegate extends SliverPersistentHeaderDelegate {
+class SearchBarWidget extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {

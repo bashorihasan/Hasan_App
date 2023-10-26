@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hasan_app/modules/home/home_bloc.dart';
-import 'package:hasan_app/modules/home/navigation_bar_item.dart';
+import 'package:hasan_app/modules/home/navigation_bar_model.dart';
 
-class TabItem extends StatelessWidget {
-  const TabItem({
+class TabItemWidget extends StatelessWidget {
+  const TabItemWidget({
     super.key,
     required this.navBarItem,
     required this.index,
@@ -11,12 +11,12 @@ class TabItem extends StatelessWidget {
   });
 
   final HomeBloc bloc;
-  final List<NavigationBarItem> navBarItem;
+  final List<NavigationBarModel> navBarItem;
   final int index;
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<NavigationBarItem?>(
+    return StreamBuilder<NavigationBarModel?>(
         stream: bloc.selectedNavigation.stream,
         initialData: bloc.selectedNavigation.value,
         builder: (context, snapshot) {

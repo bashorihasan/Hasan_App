@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hasan_app/modules/on_boarding/corousel_item.dart';
+import 'package:hasan_app/modules/on_boarding/corousel_item_model.dart';
 import 'package:hasan_app/config/colors.dart';
 
-class OnBoardingCorousel extends StatelessWidget {
-  const OnBoardingCorousel({Key? key}) : super(key: key);
+class OnBoardingCorouselWidget extends StatelessWidget {
+  const OnBoardingCorouselWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

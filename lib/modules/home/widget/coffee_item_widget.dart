@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:hasan_app/config/colors.dart';
-import 'package:hasan_app/modules/home/coffee.dart';
+import 'package:hasan_app/modules/home/coffee_model.dart';
 
-class CoffeeItem extends StatelessWidget {
-  const CoffeeItem({
+class CoffeeItemWidget extends StatelessWidget {
+  const CoffeeItemWidget({
     super.key,
     required this.coffee,
   });
 
-  final Coffee coffee;
+  final CoffeeModel coffee;
 
   @override
   Widget build(BuildContext context) {

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hasan_app/config/colors.dart';
-import 'package:hasan_app/modules/home/category.dart';
-import 'package:hasan_app/modules/home/coffee.dart';
+import 'package:hasan_app/modules/home/category_model.dart';
+import 'package:hasan_app/modules/home/coffee_model.dart';
 import 'package:hasan_app/modules/home/home_bloc.dart';
-import 'package:hasan_app/modules/home/widget/category_item.dart';
-import 'package:hasan_app/modules/home/widget/coffee_item.dart';
+import 'package:hasan_app/modules/home/widget/category_item_widget.dart';
+import 'package:hasan_app/modules/home/widget/coffee_item_widget.dart';
 
-class Categories extends StatelessWidget {
-  const Categories({
+class CategoryWidget extends StatelessWidget {
+  const CategoryWidget({
     super.key,
     required this.bloc,
   });
@@ -33,7 +33,7 @@ class Categories extends StatelessWidget {
         const SizedBox(height: 24),
         SizedBox(
           height: 30,
-          child: StreamBuilder<List<CoffeeCategory>>(
+          child: StreamBuilder<List<CoffeeCategoryModel>>(
             stream: bloc.listCategories.stream,
             initialData: bloc.listCategories.value,
             builder: (context, snapCategory) {
@@ -47,7 +47,7 @@ class Categories extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return CategoryItem(
+                  return CategoryItemWidget(
                     bloc: bloc,
                     category: category[index],
                   );
@@ -61,7 +61,7 @@ class Categories extends StatelessWidget {
         const SizedBox(height: 8),
         SizedBox(
           height: 165,
-          child: StreamBuilder<List<Coffee>>(
+          child: StreamBuilder<List<CoffeeModel>>(
             stream: bloc.listCoffee.stream,
             initialData: bloc.listCoffee.value,
             builder: (context, snapCoffee) {
@@ -75,7 +75,7 @@ class Categories extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
                 itemBuilder: (context, index) {
-                  return CoffeeItem(coffee: coffee[index]);
+                  return CoffeeItemWidget(coffee: coffee[index]);
                 },
                 separatorBuilder: (context, index) => const SizedBox(width: 17),
                 itemCount: coffee.length,

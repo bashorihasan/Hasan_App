@@ -1,8 +1,8 @@
-class NavigationBarItem {
+class NavigationBarModel {
   final String image;
   final String title;
 
-  NavigationBarItem({
+  NavigationBarModel({
     required this.image,
     required this.title,
   });
