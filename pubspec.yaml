@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   akar_icons_flutter: ^1.1.16
   sstream: ^1.0.6
+  flutter_launcher_icons: ^0.13.1
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +48,10 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  image_path: "assets/icons/icon_launcher.png"
+  min_sdk_android: 24
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
