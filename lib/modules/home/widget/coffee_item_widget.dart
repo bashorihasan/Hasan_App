@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hasan_app/config/colors.dart';
 import 'package:hasan_app/modules/home/coffee_model.dart';
+import 'package:hasan_app/modules/main_product/screen/main_product_page.dart';
 
 class CoffeeItemWidget extends StatelessWidget {
   const CoffeeItemWidget({
@@ -12,8 +13,15 @@ class CoffeeItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {},
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MainProductPage(coffee: coffee),
+          ),
+        );
+      },
       child: Stack(
         children: [
           Container(
@@ -36,9 +44,16 @@ class CoffeeItemWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 99,
-                  child: Image.asset(coffee.image, fit: BoxFit.fitHeight),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Hero(
+                    tag: coffee.image,
+                    child: Image.asset(
+                      coffee.image,
+                      height: 99,
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 2),
                 Text(
@@ -71,7 +86,35 @@ class CoffeeItemWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 7,
+            top: 13,
+            right: 13,
+            child: Container(
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: CustomColor.primary,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Row(
+                children: [
+                  const Icon(
+                    Icons.star_rounded,
+                    color: CustomColor.lightGrey,
+                    size: 12,
+                  ),
+                  const SizedBox(width: 4),
+                  Text(
+                    "${coffee.rate}",
+                    style: const TextStyle(
+                        color: CustomColor.white,
+                        fontSize: 8,
+                        fontWeight: FontWeight.w200),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 10,
             right: 7,
             child: Container(
               padding: const EdgeInsets.all(8),

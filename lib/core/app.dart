@@ -20,7 +20,12 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: "Lato"),
+      theme: ThemeData(
+        fontFamily: "Lato",
+        bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Colors.transparent,
+        ),
+      ),
       title: 'Coffee App',
       home: const OnBoardingPage(),
     );
