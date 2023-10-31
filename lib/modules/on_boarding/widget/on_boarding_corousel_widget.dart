@@ -94,27 +94,16 @@ class _CoroselState extends State<_Corosel> {
           },
           controller: _controller,
           itemBuilder: (context, index) {
-            return ShaderMask(
-              shaderCallback: (bounds) {
-                return RadialGradient(
-                  colors: [
-                    Colors.black87.withOpacity(0.7),
-                    Colors.black54.withOpacity(0.4)
-                  ],
-                  center: Alignment.topCenter,
-                  radius: 3,
-                  tileMode: TileMode.clamp,
-                ).createShader(bounds);
-              },
-              blendMode: BlendMode.darken,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8.0),
-                  image: DecorationImage(
-                    image: AssetImage(images[index]),
-                    fit: BoxFit.cover,
-                  ),
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                image: DecorationImage(
+                  image: AssetImage(images[index]),
+                  fit: BoxFit.cover,
                 ),
+              ),
+              child: Container(
+                color: CustomColor.black.withOpacity(0.25),
               ),
             );
           },
@@ -152,9 +141,10 @@ class _Indicator extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, i) {
               return AnimatedContainer(
-                width: i == (index % long) ? 16 : 6,
+                width: i == (index % long) ? 27 : 6,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(4.0),
+                  borderRadius:
+                      BorderRadius.circular(i == (index % long) ? 0 : 5),
                   color: i == (index % long)
                       ? CustomColor.primary
                       : CustomColor.fadedGrey,
@@ -163,7 +153,7 @@ class _Indicator extends StatelessWidget {
               );
             },
             separatorBuilder: (context, index) {
-              return const SizedBox(width: 6.0);
+              return const SizedBox(width: 6);
             },
             itemCount: long.toInt(),
           ),
