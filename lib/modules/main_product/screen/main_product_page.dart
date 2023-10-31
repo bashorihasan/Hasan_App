@@ -20,97 +20,100 @@ class MainProductPage extends StatelessWidget {
       child: Scaffold(
         body: Hero(
           tag: coffee.image,
-          child: Container(
-            height: height / 2.4,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  coffee.image,
+          child: Material(
+            type: MaterialType.transparency,
+            child: Container(
+              height: height / 2.4,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    coffee.image,
+                  ),
+                  fit: BoxFit.cover,
                 ),
-                fit: BoxFit.cover,
               ),
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                    margin: const EdgeInsets.all(20),
-                    padding: const EdgeInsets.fromLTRB(11, 10, 14.94, 9.61),
-                    decoration: const BoxDecoration(
-                      color: CustomColor.white,
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.arrow_back_ios_new_rounded,
-                      color: CustomColor.primary,
-                      size: 32,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.fromLTRB(11, 10, 14.94, 9.61),
+                      decoration: const BoxDecoration(
+                        color: CustomColor.white,
+                        shape: BoxShape.circle,
+                      ),
+                      child: const Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        color: CustomColor.primary,
+                        size: 32,
+                      ),
                     ),
                   ),
-                ),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(20, 9, 20, 50),
-                  color: CustomColor.black.withOpacity(0.2),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            coffee.name,
-                            style: const TextStyle(
-                              color: CustomColor.white,
-                              fontSize: 28,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            coffee.details,
-                            style: const TextStyle(
-                              color: CustomColor.white,
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: CustomColor.primary,
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Row(
+                  Container(
+                    padding: const EdgeInsets.fromLTRB(20, 9, 20, 50),
+                    color: CustomColor.black.withOpacity(0.2),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            const Icon(
-                              Icons.star_rounded,
-                              size: 24,
-                              color: CustomColor.white,
-                            ),
-                            const SizedBox(width: 3),
                             Text(
-                              "${coffee.rate}",
+                              coffee.name,
                               style: const TextStyle(
                                 color: CustomColor.white,
-                                fontSize: 16,
+                                fontSize: 28,
                                 fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 6),
+                            Text(
+                              coffee.details,
+                              style: const TextStyle(
+                                color: CustomColor.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ],
+                        Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: CustomColor.primary,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Row(
+                            children: [
+                              const Icon(
+                                Icons.star_rounded,
+                                size: 24,
+                                color: CustomColor.white,
+                              ),
+                              const SizedBox(width: 3),
+                              Text(
+                                "${coffee.rate}",
+                                style: const TextStyle(
+                                  color: CustomColor.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
